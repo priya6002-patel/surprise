@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Welcome ❤</title>
+<style>
+  body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    font-family: 'Poppins', sans-serif;
+    color:#fff;
+    text-align:center;
+    overflow:hidden;
+  }
+
+  h1{
+    font-size:48px;
+    margin:0 0 10px;
+    animation: fadeInDown 1.5s ease;
+  }
+  p{
+    font-size:18px;
+    margin:0 0 30px;
+    animation: fadeInUp 2s ease;
+  }
+
+  .btn{
+    background:#fff;
+    color:#ff4b85;
+    padding:14px 28px;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:600;
+    text-decoration:none;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    transition:all .3s;
+    animation: fadeIn 2.5s ease;
+  }
+  .btn:hover{
+    background:#ff4b85;
+    color:#fff;
+    transform:translateY(-2px);
+  }
+
+  /* Heart floating animation */
+  .heart{
+    position:absolute;
+    bottom:-20px;
+    color:rgba(255,255,255,0.6);
+    font-size:20px;
+    animation: rise 6s linear infinite;
+  }
+  @keyframes rise{
+    0%{transform:translateY(0) scale(0.8);opacity:1;}
+    100%{transform:translateY(-110vh) scale(1.3);opacity:0;}
+  }
+
+  @keyframes fadeInDown{0%{opacity:0;transform:translateY(-30px);}100%{opacity:1;transform:none;}}
+  @keyframes fadeInUp{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:none;}}
+  @keyframes fadeIn{0%{opacity:0;}100%{opacity:1;}}
+</style>
+</head>
+<body>
+  <h1>Welcome to Our Secret World 💕</h1>
+  <p>Unlock the hidden letters that belong only to us.</p>
+  <a href="letters.html" class="btn">Enter 💌</a>
+
+  <!-- Floating hearts -->
+  <div class="heart" style="left:10%;">❤</div>
+  <div class="heart" style="left:25%;animation-delay:1s;font-size:24px;">❤</div>
+  <div class="heart" style="left:40%;animation-delay:2s;font-size:18px;">❤</div>
+  <div class="heart" style="left:60%;animation-delay:3s;font-size:22px;">❤</div>
+  <div class="heart" style="left:80%;animation-delay:4s;font-size:26px;">❤</div>
+</body>
+</html>

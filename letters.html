@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Secret Letters 💌</title>
+<style>
+  body{
+    margin:0;
+    padding:20px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    background:linear-gradient(135deg,#fad0c4,#ff9a9e);
+    font-family:'Poppins',sans-serif;
+    color:#fff;
+  }
+
+  h1{
+    margin:20px 0;
+    font-size:36px;
+  }
+
+  .letters-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+    width:100%;
+    max-width:1000px;
+  }
+
+  .card{
+    background:rgba(255,255,255,0.1);
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+  }
+
+  .hint{
+    font-size:16px;
+    margin-bottom:10px;
+    opacity:0.9;
+  }
+
+  input{
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    width:80%;
+    margin-bottom:10px;
+    text-align:center;
+  }
+
+  button{
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background:#fff;
+    color:#ff4b85;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+  }
+  button:hover{
+    background:#ff4b85;
+    color:#fff;
+  }
+
+  .message{
+    margin-top:10px;
+    font-size:14px;
+  }
+
+  .letter{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    background:rgba(255,255,255,0.2);
+    border-radius:12px;
+    font-size:16px;
+    line-height:1.6;
+    text-align:left;
+  }
+
+  .show{
+    display:block;
+    animation:fadeIn 1s ease;
+  }
+
+  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+</style>
+</head>
+<body>
+  <h1>Unlock the Secret Letters 💕</h1>
+  <div class="letters-container">
+
+    <!-- Letter 1 -->
+    <div class="card">
+      <h2>Letter 1</h2>
+      <p class="hint">Hint: Your Cute Nickname 😘</p>
+      <input type="password" id="pass1" placeholder="Enter password...">
+      <button onclick="checkPass(1)">Unlock</button>
+      <p id="msg1" class="message"></p>
+      <div id="letter1" class="letter">
+        My Cutie, 💖<br><br>
+        Every time I think of you, a smile automatically comes on my face. 
+        You are the reason behind my happiness and my calmness. 
+        Your laughter is like music that makes everything around me brighter. 🌸<br><br>
+        You are not just my love, but also my best friend and my safe place. 
+        Thank you for being mine. 💕
+      </div>
+    </div>
+
+    <!-- Letter 2 -->
+    <div class="card">
+      <h2>Letter 2</h2>
+      <p class="hint">Hint: The place where we first met 🏫</p>
+      <input type="password" id="pass2" placeholder="Enter password...">
+      <button onclick="checkPass(2)">Unlock</button>
+      <p id="msg2" class="message"></p>
+      <div id="letter2" class="letter">
+        My Love, ❤️<br><br>
+        The day we first met at college, I didn’t know life was giving me the most beautiful gift ever — YOU. 
+        That one moment changed everything, and I will always cherish it. ✨<br><br>
+        From that very first smile to our endless talks, you have filled my world with joy. 
+        College will always be special because it gave me you. 🌹
+      </div>
+    </div>
+
+    <!-- Letter 3 -->
+    <div class="card">
+      <h2>Letter 3</h2>
+      <p class="hint">Hint: The word I love most ❤</p>
+      <input type="password" id="pass3" placeholder="Enter password...">
+      <button onclick="checkPass(3)">Unlock</button>
+      <p id="msg3" class="message"></p>
+      <div id="letter3" class="letter">
+        My Jaan, 💕<br><br>
+        You are my heart, my soul, my forever. 
+        I love you more with each passing day. 
+        No matter where life takes us, I promise to always be by your side. 💑<br><br>
+        You are my dream, my happiness, and my home. 
+        With you, I feel complete, and without you, nothing feels right. 
+        Always remember — you are my one and only, my everything. 💍
+      </div>
+    </div>
+
+  </div>
+
+<script>
+  // Passwords
+  const passwords = {
+    1: "jaan",
+    2: "college",
+    3: "madhav"
+  };
+
+  function checkPass(num){
+    const input = document.getElementById("pass"+num).value.trim();
+    const msg = document.getElementById("msg"+num);
+    const letter = document.getElementById("letter"+num);
+
+    if(input === passwords[num]){
+      msg.style.color="lightgreen";
+      msg.textContent="Password Match ✅";
+      letter.classList.add("show");
+    }else{
+      msg.style.color="red";
+      msg.textContent="Wrong Password ❌";
+      letter.classList.remove("show");
+    }
+  }
+</script>
+</body>
+</html>
